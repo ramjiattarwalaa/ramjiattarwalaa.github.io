@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ram Ji Attar Wala</title>
+<style>
+*{box-sizing:border-box}
+.main-header{
+  position: relative;
+  height: 50vh;
+  overflow: hidden;
+  text-align: center;
+  color: #000000;
+}
+
+.bg-video{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+  /* improve visibility */
+  filter: brightness(1.12) contrast(1.08) saturate(1.05);
+}
+
+.main-header::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* lighter overlay so video shows through more */
+  background: rgba(255, 255, 255, 0.18);
+  z-index: 1;
+}
+
+.header-content{
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body{
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(270deg,#fffdfd,#ffffff,#ffffff,#ffffff);
+  background-size:800% 800%;
+  animation:bgMove 18s ease infinite;
+}
+.container{max-width:1200px;margin:auto;padding:15px}
+.section{margin-top:50px}
+.section h2{text-align:center;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px}
+.card{
+  background:#fffdfd;
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 4px 10px rgb(254, 249, 249);
+  text-align:center;
+  animation:fadeUp .8s ease
+}
+.card img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+.price{color:#d35f2d;font-weight:bold}
+.desc{font-size:14px}
+.btn{margin-top:8px;padding:8px 12px;background:#000000;color:#fff;border:none;border-radius:6px;font-weight:bold;cursor:pointer}
+footer{margin-top:50px;background:#fffdfd;color:#000000;text-align:center;padding:12px}
+@keyframes bgMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+.header-content{
+  max-width: 900px;
+  margin: auto;
+}
+.logo{
+  width: 120px;
+  margin-bottom: 15px;
+}
+@media(max-width:600px){
+  .logo{width:90px}
+}
+</style>
+</head>
+<body>
+<header class="main-header">
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="video1.mp4" type="video/mp4">
+  </video>
+<header class="main-header">
+  <div class="header-content">
+    <img src="logo.png" class="logo" alt="Ram Ji Attar Wala">
+    <div class="brand-text">
+      <h1>Ram Ji Attar Wala</h1>
+      <p>Pooja Products • Perfumes & Attar </p>
+    </div>
+    <nav class="nav-menu">
+      <a href="#home" onclick="hideNavContent()">Home | </a>
+      <a href="#Search" onclick="hideNavContent()">Search | </a>
+      <a href="#shop" onclick="hideNavContent()"> Shop | </a>
+      <a href="#" onclick="showNavContent('story')"> Our Story | </a>
+      <a href="#" onclick="showNavContent('contact')"> Contact Us</a>
+    </nav>
+     <div id="navContent"></div>
+  </div>
+</header>
+</header>
+<div class="container">
+<section class="section">
+<h2>Perfumes & Attars</h2>
+<div class="grid">
+<div class="card"><img src="gulabattar.png"><h4>Rose Attar(3ml)</h4><p class="price">₹499</p><p class="desc">Floral fragrance</p><button class="btn" onclick="order('Rose Attar',499)">Buy</button></div>
+<div class="card"><img src="musk.png"><h4>Musk Attar(3ml)</h4><p class="price">₹549</p><p class="desc">Strong aroma</p><button class="btn" onclick="order('Musk Attar',549)">Buy</button></div>
+<div class="card"><img src="chandan.png"><h4>Sandalwood Attar(3ml)</h4><p class="price">₹599</p><p class="desc">Woody scent</p><button class="btn" onclick="order('Sandalwood Attar',599)">Buy</button></div>
+<div class="card"><img src="mogar.png"><h4>Mogra Attar(3ml)</h4><p class="price">₹479</p><p class="desc">Fresh floral</p><button class="btn" onclick="order('Jasmine Attar',479)">Buy</button></div>
+<div class="card"><img src="oud.png"><h4>Oudh Attar(3ml)</h4><p class="price">₹999</p><p class="desc">Luxury oud</p><button class="btn" onclick="order('Oudh Attar',999)">Buy</button></div>
+<div class="card"><img src="kesar.png"><h4>Kesar Attar(3ml)</h4><p class="price">₹699</p><p class="desc">Royal saffron</p><button class="btn" onclick="order('Kesar Attar',699)">Buy</button></div>
+<div class="card"><img src="lavander.png"><h4>Lavender Attar(3ml)</h4><p class="price">₹459</p><p class="desc">Calming scent</p><button class="btn" onclick="order('Lavender Attar',459)">Buy</button></div>
+<div class="card"><img src="amber.png"><h4>Amber Attar(3ml)</h4><p class="price">₹649</p><p class="desc">Warm fragrance</p><button class="btn" onclick="order('Amber Attar',649)">Buy</button></div>
+<div class="card"><img src="vanial.png"><h4>Vanila Attar(3ml)</h4><p class="price">₹429</p><p class="desc">Sweet aroma</p><button class="btn" onclick="order('Vanilla Attar',429)">Buy</button></div>
+<div class="card"><img src="whitwmusk.png"><h4>White Musk(3ml)</h4><p class="price">₹579</p><p class="desc">Soft musk</p><button class="btn" onclick="order('White Musk',579)">Buy</button></div>
+<div class="card"><img src="blackmusk.png"><h4>Black Musk(3ml)</h4><p class="price">₹599</p><p class="desc">Deep musk</p><button class="btn" onclick="order('Black Musk',599)">Buy</button></div>
+<div class="card"><img src="royaloudh.png"><h4>Royal Oudh(3ml)</h4><p class="price">₹1299</p><p class="desc">Premium oud</p><button class="btn" onclick="order('Royal Oudh',1299)">Buy</button></div>
+<div class="card"><img src="majmua.png"><h4>Majmua Attar(3ml)</h4><p class="price">₹549</p><p class="desc">Traditional blend</p><button class="btn" onclick="order('Majmua Attar',549)">Buy</button></div>
+<div class="card"><img src="khush.png"><h4>Khush Attar(3ml)</h4><p class="price">₹489</p><p class="desc">Earthy scent</p><button class="btn" onclick="order('Khush Attar',489)">Buy</button></div>
+<div class="card"><img src="lotus.png"><h4>Lotus Attar(3ml)</h4><p class="price">₹469</p><p class="desc">Fresh lotus</p><button class="btn" onclick="order('Lotus Attar',469)">Buy</button></div>
+<div class="card"><img src="firoza.png"><h4>Firoza Attar(3ml)</h4><p class="price">₹559</p><p class="desc">Cool scent</p><button class="btn" onclick="order('Firoza Attar',559)">Buy</button></div>
+<div class="card"><img src="night.png"><h4>Night Queen(3ml)</h4><p class="price">₹499</p><p class="desc">Raat rani</p><button class="btn" onclick="order('Night Queen',499)">Buy</button></div>
+<div class="card"><img src="arabic.png"><h4>Arabic Perfume(3ml)</h4><p class="price">₹1999</p><p class="desc">Strong perfume</p><button class="btn" onclick="order('Arabic Perfume',899)">Buy</button></div>
+<div class="card"><img src="2.png"><h4>French Perfume(3ml)</h4><p class="price">₹1999</p><p class="desc">Premium Attar</p><button class="btn" onclick="order('French Perfume',799)">Buy</button></div>
+<div class="card"><img src="coolwaterc.png"><h4>Cool Water(3ml)</h4><p class="price">₹2199</p><p class="desc">Fresh aquatic</p><button class="btn" onclick="order('Cool Water',699)">Buy</button></div>
+<div class="card"><img src="desertoudh.png"><h4>Desert Oud(3ml)</h4><p class="price">₹2299</p><p class="desc">Arabian oud</p><button class="btn" onclick="order('Desert Oud',1099)">Buy</button></div>
+<div class="card"><img src="royalblue.png"><h4>Royal Blue(3ml)</h4><p class="price">₹749</p><p class="desc">Modern scent</p><button class="btn" onclick="order('Royal Blue',749)">Buy</button></div>
+<div class="card"><img src="heaven.png"><h4>Heaven Attar(3ml)</h4><p class="price">₹529</p><p class="desc">Soft fragrance</p><button class="btn" onclick="order('Heaven Attar',529)">Buy</button></div>
+<div class="card"><img src="diven.png"><h4>Divine Attar(3ml)</h4><p class="price">₹579</p><p class="desc">Spiritual scent</p><button class="btn" onclick="order('Divine Attar',579)">Buy</button></div>
+
+</div>
+</section>
+<section class="section">
+<h2>🔱 Pooja Products</h2>
+<div class="grid">
+
+<div class="card"><img src="kit.png"><h4>Pooja Samagri Kit</h4><p class="price">₹999</p><p class="desc">Complete pooja essentials</p><button class="btn" onclick="order('Pooja Samagri Kit',999)">Buy</button></div>
+<div class="card"><img src="dhoopdhani.png"><h4>Dhoop Dani</h4><p class="price">₹399</p><p class="desc">Complete pooja essentials</p><button class="btn" onclick="order('Pooja Samagri Kit',999)">Buy</button></div>
+<div class="card"><img src="agarbatti.pmg"><h4>Agarbatti Premium(400GM)</h4><p class="price">₹99</p><p class="desc">Long lasting incense</p><button class="btn" onclick="order('Agarbatti Premium',199)">Buy</button></div><div class="card"><img src="dhoopstick.png"><h4>Dhoop Stick</h4><p class="price">₹149</p><p class="desc">Herbal dhoop</p><button class="btn" onclick="order('Dhoop Stick',149)">Buy</button></div>
+<div class="card"><img src="camphor.png"><h4>Camphor</h4><p class="price">₹99</p><p class="desc">Pure kapoor</p><button class="btn" onclick="order('Camphor',99)">Buy</button></div>
+<div class="card"><img src="gheediya.png"><h4>Ghee Diya</h4><p class="price">₹249</p><p class="desc">Ready diya</p><button class="btn" onclick="order('Ghee Diya',249)">Buy</button></div>
+<div class="card"><img src="hawansamagri.png"><h4>Hawan Samagri</h4><p class="price">₹349</p><p class="desc">Yagya samagri</p><button class="btn" onclick="order('Hawan Samagri',349)">Buy</button></div>
+<div class="card"><img src="kumkum.png"><h4>Kumkum</h4><p class="price">₹79</p><p class="desc">Tilak kumkum</p><button class="btn" onclick="order('Kumkum',79)">Buy</button></div>
+<div class="card"><img src="chandanpowder.png"><h4>Chandan Powder(100GM)</h4><p class="price">₹199</p><p class="desc">Sandalwood</p><button class="btn" onclick="order('Chandan Powder',179)">Buy</button></div>
+<div class="card"><img src="gangajal.png"><h4>Gangajal</h4><p class="price">₹89</p><p class="desc">Holy water</p><button class="btn" onclick="order('Gangajal',89)">Buy</button></div>
+<div class="card"><img src="kalash.png"><h4>Kalash Set</h4><p class="price">₹899</p><p class="desc">Pooja kalash</p><button class="btn" onclick="order('Kalash Set',899)">Buy</button></div>
+<div class="card"><img src="poojathaliset.png"><h4>Pooja Thali Set</h4><p class="price">₹699</p><p class="desc">Steel thali</p><button class="btn" onclick="order('Pooja Thali',699)">Buy</button></div>
+<div class="card"><img src="cottonwick.png"><h4>Cotton Wicks</h4><p class="price">₹59</p><p class="desc">Diya bati</p><button class="btn" onclick="order('Cotton Wicks',59)">Buy</button></div>
+<div class="card"><img src="gulabdhoopcone.png"><h4>Dhoop Cone (Gulab 400GM)</h4><p class="price">₹99</p><p class="desc">Smoky fragrance</p><button class="btn" onclick="order('Dhoop Cone',119)">Buy</button></div>
+<div class="card"><img src="4in1dhoop.png"><h4>Dhoop Cone (4 in 1 400GM)</h4><p class="price">₹99</p><p class="desc">Smoky fragrance</p><button class="btn" onclick="order('Dhoop Cone',119)">Buy</button></div>
+<div class="card"><img src="panchamrit.png"><h4>Panchamrit</h4><p class="price">₹249</p><p class="desc">Sacred mix</p><button class="btn" onclick="order('Panchamrit',249)">Buy</button></div>
+<div class="card"><img src="ashtagandha.png"><h4>Ashtagandha</h4><p class="price">₹159</p><p class="desc">Tilak paste</p><button class="btn" onclick="order('Ashtagandha',159)">Buy</button></div>
+<div class="card"><img src="havankund.png"><h4>Havan Kund</h4><p class="price">₹1299</p><p class="desc">Copper kund</p><button class="btn" onclick="order('Havan Kund',1299)">Buy</button></div>
+<div class="card"><img src="rudraksha.png"><h4>Rudraksha Mala</h4><p class="price">₹499</p><p class="desc">108 beads</p><button class="btn" onclick="order('Rudraksha Mala',499)">Buy</button></div>
+<div class="card"><img src="brass.png"><h4>Brass Bell</h4><p class="price">₹399</p><p class="desc">Temple bell</p><button class="btn" onclick="order('Brass Bell',399)">Buy</button></div>
+<div class="card"><img src="poojaoil.png"><h4>Pooja Oil</h4><p class="price">₹299</p><p class="desc">Pure oil</p><button class="btn" onclick="order('Pooja Oil',299)">Buy</button></div>
+<div class="card"><img src="1C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="2C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="3C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="4C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="5C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="6C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="14C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="7C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="8C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹959</p><p class="desc">Pooja product</p><button class="btn" onclick="order('Pooja Product',659)">Buy</button></div>
+<div class="card"><img src="9C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹899</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="10C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="11C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="12C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="13C.png"><h4>Laddu Gopal Ji Dress</h4><p class="price">₹999</p><p class="desc">Pooja product</p><button class="btn" onclick="order('C',699)">Buy</button></div>
+<div class="card"><img src="premmiumguggle.jpg"><h4>Premiun Guggle(100GM)</h4><p class="price">₹99</p><p class="desc">Pooja product</p><button class="btn" onclick="order('Pooja Product',99)">Buy</button></div>
+</div>
+</section>
+
+</div>
+
+<footer>
+<p>© 2025 Ram Ji Attar Wala</p>
+</footer>
+
+<script>
+function order(product,price){
+  const phone='919455582695';
+  const msg=`Hello, I want to order:%0AProduct: ${product}%0APrice: ₹${price}`;
+  window.open(`https://wa.me/${phone}?text=${msg}`,'_blank');
+}
+function showNavContent(type){
+  const box = document.getElementById("navContent");
+  box.style.display = "block";
+
+  if(type === "story"){
+    box.innerText = "its all about";
+  } 
+  else if(type === "contact"){
+    box.innerText = "9785854770";
+  }
+}
+
+function hideNavContent(){
+  document.getElementById("navContent").style.display = "none";
+}
+</script>
+
+</body>
+</html>
